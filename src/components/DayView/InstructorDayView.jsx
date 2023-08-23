@@ -21,7 +21,6 @@ const CustomTableContainer = styled(TableContainer)({
   marginTop: "1vh",
   marginBottom: "1vh",
   maxHeight: "55vh",
-  // paddingBottom: "16px", // Adjust this value based on your footer's height and any additional padding you want above the footer
 });
 
 const Container = styled("div")({
@@ -33,8 +32,6 @@ const Container = styled("div")({
 
 
 const InstructorDayView = () => {
-  // alert.showAlertWithMessage("selected class is:"+selectedClass, "success");
-
   const [studentData, setStudentData] = useState([]);
 
   const [selectedDate, setSelectedDate] = useState(""); // State for selected date

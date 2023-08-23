@@ -51,7 +51,6 @@ const Home = () => {
   }, [user]);
 
   const renderUserData = () => {
-
     let fieldRows = [];
     for (let [field, value] of Object.entries(userData)) {
       fieldRows.push(
@@ -68,13 +67,6 @@ const Home = () => {
               ):''
           }
           </TableCell>
-
-//     const fieldRows = [];
-//     for (const [field, value] of Object.entries(userData)) {
-//       fieldRows.push(
-//         <TableRow key={field}>
-//           <TableCell>{field}</TableCell>
-
           <TableCell>{value}</TableCell>
         </TableRow>
       );

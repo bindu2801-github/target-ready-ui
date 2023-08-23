@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <header className="App-header">
         <Logo />
-        <h2>Target Ready</h2>
+        <h2>Digitized Time Table</h2>
         <SideNavigation />
       </header>
     </>

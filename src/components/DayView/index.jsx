@@ -19,7 +19,6 @@ const CustomTableContainer = styled(TableContainer)({
   marginTop: "1vh",
   marginBottom: "1vh",
   maxHeight: "60vh",
-  // paddingBottom: "16px", // Adjust this value based on your footer's height and any additional padding you want above the footer
 });
 
 const Container = styled("div")({
@@ -66,7 +65,6 @@ const DayView = () => {
       instructor: "Kalyan P",
       location: "Room C307",
     },
-    // Add more schedule data for other slots, subjects, instructors, and locations
   ];
 
   return (

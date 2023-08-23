@@ -21,7 +21,6 @@ const CustomTableContainer = styled(TableContainer)({
   marginTop: "1vh",
   marginBottom: "1vh",
   maxHeight: "55vh",
-  // paddingBottom: "16px", // Adjust this value based on your footer's height and any additional padding you want above the footer
 });
 
 const Container = styled("div")({

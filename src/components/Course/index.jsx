@@ -1,4 +1,5 @@
 import { Card } from "@mui/material";
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 const tableStyles = {
@@ -26,6 +27,21 @@ const Course = () => {
     location: "",
   });
 
+  useEffect(() => {
+    fetchData();
+  },[]);
+
+  const fetchData = () => {
+    try{
+      axios
+        .get("http://localhost:8087/courses")
+        .then((response) => {
+          setCourseData(response.data);
+        })
+    }catch(error){
+      console.error("Error fetching student data:", error);
+    };
+  };
   return (
     <Card
       className="App-Card"

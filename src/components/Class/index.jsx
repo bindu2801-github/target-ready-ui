@@ -37,17 +37,13 @@ const titleStyles = {
     padding: "10px", // Adding padding to the title cells
 };
 
-// const dataStyle = {
-//   padding: "10px",
-// };
 const headingStyle = {
-  // border:'1px solid black',
   position: "absolute",
   left: "45%",
   top: "15%",
   padding: "10px",
   boxShadow: "0px 0.5px 1px",
-};
+     };
 
 const buttonStyle ={
     position:"absolute",
@@ -55,7 +51,7 @@ const buttonStyle ={
     top: "18%",
     padding: "5px",
     boxShadow: "0px 0.5px 1px",
-}
+            }
 
 const ClassInstance = () => {
   const [classData, setClassData] = useState([]);
@@ -288,47 +284,5 @@ const ClassInstance = () => {
      </card>
    );
  };
-
-//      export default Instructor;
-//   return (
-//     <Card
-//       classInstanceName="App-Card"
-//       style={{
-//         position: "absolute",
-//         top: "40%",
-//         left: "30%",
-//         transform: "translate(0px,-50%)",
-//       }}
-//     >
-//       <h3 style={{ border: "1px solid black", padding: "15px" }}>
-//         List of classInstancees
-//       </h3>
-//       <div style={tableStyles}>
-//         <table>
-//           <thead>
-//             <tr>
-//               <th style={titleStyles}>Serial Number</th>
-//               <th style={titleStyles}>classInstance ID</th>
-//               <th style={titleStyles}>classInstance Name</th>
-//               <th style={titleStyles}>classInstance Section</th>
-//               <th style={titleStyles}>classInstance Strength</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {classInstanceData.map((classInstanceInfo) => (
-//               <tr key={classInstanceInfo.classInstanceId}>
-//                 <td style={dataStyle}>{classInstanceInfo.serialNumber}</td>
-//                 <td style={dataStyle}>{classInstanceInfo.classInstanceId}</td>
-//                 <td style={dataStyle}>{classInstanceInfo.classInstanceName}</td>
-//                 <td style={dataStyle}>{classInstanceInfo.classInstanceSection}</td>
-//                 <td style={dataStyle}>{classInstanceInfo.classInstanceStrength}</td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     </Card>
-//   );
-// };
 
 export default ClassInstance;

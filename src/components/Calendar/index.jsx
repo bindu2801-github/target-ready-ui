@@ -6,15 +6,12 @@ import { UserContext } from "../UserContext";
 import StudentWeeklyView from "../WeeklyView/StudentWeeklyView";
 import AdminWeeklyView from "../WeeklyView/AdminWeeklyView";
 import InstructorWeeklyView from "../WeeklyView/InstructorWeeklyView";
-
 import InstructorDayView from "../DayView/InstructorDayView";
 import StudentDayView from "../DayView/StudentDayView";
 import AdminDayView from "../DayView/AdminDayView";
 import { TabList } from "@mui/lab";
 import axios from "axios";
-import {
-  FormControl,
-}from "@mui/material";
+import {FormControl }from "@mui/material";
 import './index.css';
 
 
@@ -77,13 +74,10 @@ const Calendar = () => {
     };
   };
 
-  
-// console.log(selectedClass);
   const handleTabChange = (event, newValue) => {
 
     if( role==='admin' && selectedClass === "" ){
       alert("please select the class");
-      // alert.showAlertWithMessage("Please select the class!", "error");
     }
     else{
       setSelectedTab(newValue);

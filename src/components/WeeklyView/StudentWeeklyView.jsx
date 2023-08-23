@@ -110,7 +110,7 @@ const StudentWeeklyView = () => {
                   if (cellData) {
                     message = <p>{cellData.courseName}</p>;
                   }
-                  else if(slot=="12:00pm-1:00pm"){
+                  else if(slot==="12:00pm-1:00pm"){
                     message = <p>Lunch</p>;
                   }
                   else {
@@ -141,15 +141,15 @@ const StudentWeeklyView = () => {
             </Typography>
 
             <Typography variant="body1">
+              Instructor: {selectedCellData?.instructorName}
+            </Typography>
+            <Typography variant="body1">
               Day: {selectedCellData?.week}
             </Typography>
             <Typography variant="body1">
               Time: {selectedCellData?.slot}
             </Typography>
             <Typography variant="body1">{selectedCellData?.location}</Typography>
-            <Button variant="outlined" startIcon={<DeleteIcon />}>
-        Delete
-      </Button>
           </CardContent>
         </Card>
       </Modal>

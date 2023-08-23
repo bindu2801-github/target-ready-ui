@@ -23,12 +23,13 @@ export const AlertProvider = ({ children }) => {
     showAlertWithMessage,
   };
 
+
   return (
     <AlertContext.Provider value={value}>
       {children}
       {showAlert && (
         <Alert
-          onClose={() => {}}
+          onClose={() => {setShowAlert(false);}}
           severity={alertSeverity}
           style={{ position: "fixed", top: "10px", right: "10px" }}
         >

@@ -21,7 +21,6 @@ const CustomTableContainer = styled(TableContainer)({
   marginTop: "1vh",
   marginBottom: "1vh",
   maxHeight: "55vh",
-  // paddingBottom: "16px", // Adjust this value based on your footer's height and any additional padding you want above the footer
 });
 
 const Container = styled("div")({
@@ -33,13 +32,11 @@ const Container = styled("div")({
 
 
 const StudentDayView = () => {
-  // alert.showAlertWithMessage("selected class is:"+selectedClass, "success");
-
   const [studentData, setStudentData] = useState([]);
 
   const [selectedDate, setSelectedDate] = useState(""); // State for selected date
   const [show,setShow]=useState(true);
-  
+
   let id=localStorage.getItem('id');
   const [table,setTable]=useState([]);
 
@@ -56,16 +53,12 @@ const StudentDayView = () => {
     }
   },[]);
 
-  
+
 
   const fetchData = async (date) => {
     try{
       classId=localStorage.getItem('classid');
       const response = await axios.get(`http://localhost:8087/time_table/student/${classId}/${date}`);
-      // axios.get(`http://localhost:8087/time_table/student/${classId}/${date}`)
-      // .then((response) => {
-      //   setTable(response.data);
-      //   })
       setTable(response.data);
       setShow(true);
     }catch(error) {
@@ -95,14 +88,14 @@ const StudentDayView = () => {
   return (
     <div>
       <Container>
-        <input 
+        <input
           style={{ marginTop: "16px" }}
           type="date"
           value={selectedDate}
           onChange={(e) => handleDateSelect(e.target.value)}
         />
       </Container>
-      
+
       {show && (
         <CustomTableContainer component={Paper}>
             <Table style={{ border: "1px solid black" }}>

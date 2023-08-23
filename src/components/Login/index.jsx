@@ -39,12 +39,14 @@ const Login = () => {
       localStorage.setItem('classid',"");
       const userData = { role, id };
       login(userData);
-
-      navigate("/calendar");
+      //navigate("/calendar");
     } catch (error) {
-      //console.log(error);
-      alert.showAlertWithMessage(error.response.data.error, "error");
-    }
+        try {
+          alert.showAlertWithMessage(error.response.data.error, "error");
+        } catch (error) {
+          alert.showAlertWithMessage("Not connected to service", "error");
+        }
+      }
   };
 
   return (

@@ -146,10 +146,7 @@ const InstructorWeeklyView = () => {
             <Typography variant="body1">
               Time: {selectedCellData?.slot}
             </Typography>
-            
-            <Button variant="outlined" startIcon={<DeleteIcon />}>
-        Delete
-      </Button>
+
           </CardContent>
         </Card>
       </Modal>

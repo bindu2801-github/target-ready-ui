@@ -16,11 +16,11 @@ import {
     Modal,
     Typography,
     IconButton,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  TextField,
-  DialogActions,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    TextField,
+    DialogActions,
 } from "@mui/material";
 import "./index.css";
 import Button from '@mui/material/Button';
@@ -40,7 +40,6 @@ const CustomTableContainer = styled(TableContainer)({
   
 
 const AdminWeeklyView = () => {
-  const alert = useAlert();
   const [newlist,setnewlist]=useState([]);
   const [selectedSubject,setSelectedSubject] = useState(null);
   const [selectedCellData, setSelectedCellData] = useState(null);
@@ -49,6 +48,7 @@ const AdminWeeklyView = () => {
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [show,setShow] = useState(true);
   const subjectlist=[];
+  const alert = useAlert();
 
   const handleCellClick = (cellData) => {
     const uniqueSet = new Set(subjectlist);
@@ -65,13 +65,14 @@ const AdminWeeklyView = () => {
     axios
           .delete(`http://localhost:8087/time_table/${classId}/${day}/${time}`)
           .then((response) => {
-      
             console.log(response);
+            alert.showAlertWithMessage(response.data, "success");
+            setOpenModal(true);
           })
           .catch((error) => {
             console.error("Error fetching user data:", error);
           });
-      window.location.reload();
+      //window.location.reload();
   }
 
   const handleCloseModal = () => {
@@ -130,15 +131,14 @@ const AdminWeeklyView = () => {
       axios
             .put(`http://localhost:8087/time_table/${classId}/${week}/${slot}/${subject}/${location}`)
             .then((response) => {
-        
-              window.location.reload();
+              alert.showAlertWithMessage(response.data, "success");
+              setOpenEditDialog(false);
+              setOpenModal(false);
             })
             .catch((error) => {
-
-              // Add the alert here @BINDU 
-
-              alert(error.response.data.error);
-              // console.error(error.response.data.error);
+              alert.showAlertWithMessage(error.response.data.error,"error");
+              setOpenEditDialog(false);
+              setOpenModal(false);
             }); 
     }
 
@@ -223,7 +223,7 @@ const AdminWeeklyView = () => {
          <DialogTitle>Edit class</DialogTitle>
          <DialogContent>
          <select value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)}>
-        <option value="">Select an Class</option>
+        <option value="">Select a Subject</option>
         {newlist.map((option, index) => (
           <option key={index} value={option}>
             {option}
@@ -242,7 +242,6 @@ const AdminWeeklyView = () => {
          <DialogActions>
            <Button onClick={() => setOpenEditDialog(false)}>Cancel</Button>
            <Button onClick={ () => onEditData(selectedCellData?.week,selectedCellData?.slot,selectedSubject,changelocation)
-
            }
             variant="contained" color="primary">
              Save
